@@ -1,0 +1,30 @@
+databaseChangeLog:
+
+  - changeSet:
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+          taleName: employee
+      id: create-employee #текстовый идентификатор (Обязателен)
+      author: Igor Voronezhtsev # автор (Обязателен)
+      changes:
+        - createTable: # создаем новую таблицу
+            tableName: employee
+            columns: # объявления колонок
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: fio
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: salary
+                  type: bigint
+                  constraints:
+                    nullable: false
