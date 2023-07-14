@@ -1,5 +1,4 @@
 databaseChangeLog:
-
   - changeSet:
       preConditions:
         - onFail: MARK_RAN
